@@ -36,7 +36,7 @@ print(arquivo.closed)'''
 with open("precos_roupas.txt","a") as arquivo:
     for preco in precos:
         arquivo.write(str(preco) + '\n')'''
-precos = [100000]
+'''precos = [100000]
 with open("precos_roupas", "w") as arquivo:
     for preco in precos:
-        arquivo.write(str(preco) + '\n')
+        arquivo.write(str(preco) + '\n')'''
