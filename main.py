@@ -40,3 +40,55 @@ with open("precos_roupas.txt","a") as arquivo:
 with open("precos_roupas", "w") as arquivo:
     for preco in precos:
         arquivo.write(str(preco) + '\n')'''
+
+disciplinas = ["Rad \n", "intordução a C \n", "Programação 1 \n"]
+'''with open("disciplinas.txt", "w") as file:
+    file.write("Relação de disciplinas \n")
+    file.writelines(disciplinas)
+
+with open("disciplinas.txt", "r") as file:
+    print(file.read())'''
+
+'''with open("texto.txt","r") as arquivo:
+    print("Representação original da linha")
+    #for linha in arquivo:
+        #print(repr(linha))
+
+with open("texto.txt", "r") as arquivo:
+    print("Conteudo da linha")
+    for linha in arquivo:
+        linha_ = linha.strip()
+        print(repr(linha_))'''
+
+'''minha_lista = ["Arroz", "feijao","Carne"]
+lista_ = '.'.join(minha_lista)
+with open("texto_.txt","w") as arquivo:
+ arquivo.write(lista_)'''
+
+'''try:
+     with open("arquivo_teste.txt","r") as arquivo:
+         print(arquivo.read())
+except FileNotFoundError:
+    print("Arquivo inexistente")'''
+
+'''import os 
+try:
+    os.remove("teste.txt")
+    print("Arquivo foi removido")
+except FileNotFoundError as erro:
+    print("arquivo ")
+    print("descrição", erro)'''
+
+try:
+    f = open("novo2.txt","r")
+    f.write("Hello")
+except IOError as erro:
+    print("O erro foi", erro)
+
+
+
+ 
+
+
+
+
