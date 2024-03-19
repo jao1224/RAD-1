@@ -31,7 +31,19 @@ cursor.execute('''CREATE TABLE IF NOT EXISTS Veiculo(
 #cursor.execute(comando,(pessoa.cpf,pessoa.nome,pessoa.nascimento,pessoa.usa_oculos))
 pessoas= [Pessoa(122342356745, 'joao', ' 2000-01-31', True  ), Pessoa(102938302089, 'cynthia', '1995-03-10',False)]
 comando= '''INSERT INTO Pessoa(cpf, nome, nascimento, oculos) values (?,?,?,?); '''
-cursor.executemany(comando,[(i.cpf, i.nome,i.nascimento,i.usa_oculos) for i in pessoas])
+#cursor.executemany(comando,[(i.cpf, i.nome,i.nascimento,i.usa_oculos) for i in pessoas])
+#adicionando marca
+comando= '''insert into Marca (nome, sigla) values (:nome, :sigla)'''
+marcaA= Marca('Marca A', 'MA')
+cursor.execute(comando, vars(marcaA))
+marcaA.id = cursor.lastrowid
+marcaB= Marca("Marca B", "MB")
+cursor.execute(comando, vars(marcaB))
+marcaB.id= cursor.lastrowid
+#adicionar veiculo
+comando1= '''insert into Veiculo(placa, ano, cor, motor, proprietario, marca) values (:placa, :ano, :cor, :motor, :proprietario, :marca);'''
+veiculo1= Veiculo("AAABBB01", '2001', 'prata', 1.0, 122342356745, marcaA.id )
+cursor.execute(comando1, vars(veiculo1))
 banco.commit()
 cursor.close()
 banco.close
